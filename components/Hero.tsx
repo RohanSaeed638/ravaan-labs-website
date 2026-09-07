@@ -6,14 +6,7 @@ export default function Hero() {
   const { open } = useContactModal();
 
   return (
-    <section className="relative overflow-hidden bg-navy-900">
-      {/* ambient background glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-40 top-0 h-[600px] w-[600px] rounded-full bg-brand-violet/20 blur-[120px]" />
-        <div className="absolute right-20 top-40 h-[400px] w-[400px] rounded-full bg-brand-blue/20 blur-[100px]" />
-        <div className="absolute inset-0 opacity-[0.15] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:32px_32px]" />
-      </div>
-
+    <section className="relative overflow-hidden bg-cover bg-center h-[600px]" style={{ backgroundImage: `url('./ravaan-hero.png')` }}>
       <div className="container-content relative grid gap-12 pb-24 pt-16 lg:grid-cols-2 lg:items-center lg:pt-20">
         <div>
           <p className="mb-4 text-[13px] font-semibold tracking-wide text-brand-blue">
@@ -46,7 +39,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end" aria-hidden>
+        {/* <div className="relative flex justify-center lg:justify-end" aria-hidden>
           <svg
             viewBox="0 0 480 480"
             className="w-full max-w-[440px] drop-shadow-[0_0_60px_rgba(124,58,237,0.35)]"
@@ -75,7 +68,7 @@ export default function Hero() {
             />
             <ellipse cx="240" cy="410" rx="170" ry="14" fill="url(#heroRibbon)" opacity="0.5" />
           </svg>
-        </div>
+        </div> */}
       </div>
     </section>
   );

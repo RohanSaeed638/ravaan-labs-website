@@ -22,15 +22,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/5 bg-navy-900/95 backdrop-blur">
       <div className="container-content flex h-[72px] items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
-          <Image src="/logo-mark.svg" alt="" width={32} height={32} aria-hidden />
-          <span className="leading-none">
-            <span className="block text-[15px] font-bold tracking-wide text-white">
-              RAVAAN
-            </span>
-            <span className="block text-[10px] tracking-[0.25em] text-white/50">
-              LABS
-            </span>
-          </span>
+          <Image src="/logo-mark-main.png" alt="" width={160} height={160} aria-hidden />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">

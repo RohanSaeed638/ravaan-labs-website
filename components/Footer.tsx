@@ -33,17 +33,10 @@ export default function Footer() {
     <footer className="bg-navy-900 pt-16">
       <div className="container-content grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <Image src="/logo-mark.svg" alt="" width={30} height={30} aria-hidden />
-            <span className="leading-none">
-              <span className="block text-[14px] font-bold tracking-wide text-white">
-                RAVAAN
-              </span>
-              <span className="block text-[9px] tracking-[0.25em] text-white/50">
-                LABS
-              </span>
-            </span>
-          </div>
+          <a href="#" className="flex items-center gap-2.5">
+            <Image src="/logo-mark-main.png" alt="" width={160} height={160} aria-hidden />
+          </a>
+             
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
             We are a software &amp; AI product lab that turns ideas into
             intelligent products and powerful digital experiences.
@@ -82,11 +75,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-content flex flex-col items-center justify-between gap-2 py-5 text-xs text-white/40 sm:flex-row">
+        <div className="container-content flex flex-col items-center justify-center gap-2 py-5 text-xs text-white/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Ravaan Labs. All rights reserved.</p>
-          <p>
-            Made with <span aria-hidden>❤️</span> in Pakistan
-          </p>
         </div>
       </div>
     </footer>
