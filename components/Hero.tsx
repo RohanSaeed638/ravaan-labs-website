@@ -9,30 +9,30 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-cover bg-center h-[600px]" style={{ backgroundImage: `url('./ravaan-hero.png')` }}>
       <div className="container-content relative grid gap-12 pb-24 pt-16 lg:grid-cols-2 lg:items-center lg:pt-20">
         <div>
-          <p className="mb-4 text-[13px] font-semibold tracking-wide text-brand-blue">
+          <p className="mb-4 text-[16px] font-semibold tracking-wide text-brand-blue">
             Software &amp; AI Product Lab
           </p>
-          <h1 className="text-[44px] font-bold leading-[1.08] text-white sm:text-[56px]">
+          <h1 className="text-[60px] font-bold leading-[1.08] text-white sm:text-[72px]">
             Ideas in
             <br />
             <span className="bg-brand-gradient bg-clip-text text-transparent">
               Motion.
             </span>
           </h1>
-          <p className="mt-6 max-w-md text-[17px] leading-relaxed text-white/60">
+          <p className="mt-6 max-w-md text-[18px] leading-relaxed text-white/60">
             We experiment, build and evolve AI-powered products and digital
             systems that move ideas forward.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <button
               onClick={() => open("Start a project")}
-              className="flex items-center gap-2 rounded-lg bg-brand-gradient-diag px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
+              className="flex items-center gap-2 rounded-lg bg-brand-gradient-diag px-8 py-4 text-sm font-medium text-white transition hover:opacity-90"
             >
               Start a Project <span aria-hidden>→</span>
             </button>
             <a
               href="#products"
-              className="rounded-lg border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/5"
+              className="rounded-lg border border-white/20 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/5"
             >
               Explore Our Work
             </a>

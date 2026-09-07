@@ -76,7 +76,7 @@ export default function Navbar() {
                 setMobileOpen(false);
                 open("Let's talk about your project");
               }}
-              className="mt-2 rounded-lg bg-brand-gradient-diag px-4 py-2.5 text-center text-sm font-medium text-white"
+              className="mt-2 rounded-lg bg-brand-gradient-diag px-6 py-3 text-center text-sm font-medium text-white"
             >
               Let&apos;s Talk →
             </button>
