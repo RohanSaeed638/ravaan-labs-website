@@ -26,8 +26,23 @@ const columns = [
   },
 ];
 
-const socials = [Github, Linkedin, Twitter, Youtube, Mail];
-
+const socials = [
+  {
+    icon: Github,
+    href: "https://github.com/Ravaan-Labs",
+    label: "Ravaan Labs on GitHub",
+  },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/ravaan-labs/",
+    label: "Ravaan Labs on LinkedIn",
+  },
+  {
+    icon: Mail,
+    href: "mailto:contact@ravaanlabs.com",
+    label: "Email Ravaan Labs",
+  },
+];
 export default function Footer() {
   return (
     <footer className="bg-navy-900 pt-16">
@@ -42,11 +57,17 @@ export default function Footer() {
             intelligent products and powerful digital experiences.
           </p>
           <div className="mt-5 flex gap-3">
-            {socials.map((Icon, i) => (
+            {socials.map(({ icon: Icon, href, label }) => (
               <a
-                key={i}
-                href="#"
-                aria-label="Social link"
+                key={label}
+                href={href}
+                aria-label={label}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={
+                  href.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white/60 transition hover:bg-white/10 hover:text-white"
               >
                 <Icon size={15} />

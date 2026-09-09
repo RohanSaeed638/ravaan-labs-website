@@ -16,12 +16,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <LogoStrip />
+        {/* <LogoStrip /> */}
         <Services />
         <ProductShowcase />
         <StatsBar />
         <Process />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <CTASection />
       </main>
       <Footer />
