@@ -1,10 +1,10 @@
-import { Globe2, Rocket, Users, TrendingUp } from "lucide-react";
+import { Rocket, Users, Globe2, Award } from "lucide-react";
 
-const stats = [
-  { icon: Globe2, value: "25+", label: "Countries Served" },
-  { icon: Rocket, value: "50+", label: "Projects Delivered" },
-  { icon: Users, value: "98%", label: "Client Satisfaction" },
-  { icon: TrendingUp, value: "5+", label: "Years of Experience" },
+export const stats = [
+  { icon: Rocket, value: "10+", label: "Products Launched" },
+  { icon: Users, value: "25+", label: "Happy Clients" },
+  { icon: Globe2, value: "5+", label: "Countries" },
+  { icon: Award, value: "99%", label: "Client Satisfaction" },
 ];
 
 export default function StatsBar() {

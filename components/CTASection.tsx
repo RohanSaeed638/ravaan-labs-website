@@ -2,7 +2,17 @@
 
 import { useContactModal } from "./ContactModal";
 
-export default function CTASection() {
+export default function CTASection({
+  title = "Ready to build something amazing?",
+  subtitle = "Let's experiment, build and evolve ideas together.",
+  buttonLabel = "Let's Talk",
+  modalSubject = "Let's talk about your project",
+}: {
+  title?: string;
+  subtitle?: string;
+  buttonLabel?: string;
+  modalSubject?: string;
+}) {
   const { open } = useContactModal();
 
   return (
@@ -13,17 +23,15 @@ export default function CTASection() {
           <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-2xl font-bold text-ink sm:text-[28px]">
-                Ready to build something amazing?
+                {title}
               </h2>
-              <p className="mt-2 text-muted">
-                Let&apos;s experiment, build and evolve ideas together.
-              </p>
+              <p className="mt-2 text-muted">{subtitle}</p>
             </div>
             <button
-              onClick={() => open("Let's talk about your project")}
+              onClick={() => open(modalSubject)}
               className="flex shrink-0 items-center gap-2 rounded-lg bg-brand-gradient-diag px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
             >
-              Let&apos;s Talk <span aria-hidden>→</span>
+              {buttonLabel} <span aria-hidden>→</span>
             </button>
           </div>
         </div>

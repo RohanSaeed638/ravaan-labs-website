@@ -1,28 +1,44 @@
 import Image from "next/image";
-import { Github, Linkedin, Twitter, Youtube, Mail } from "lucide-react";
+import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const columns = [
   {
     title: "Company",
-    links: ["About Us", "Careers", "Blog", "Contact"],
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Careers", href: "/about#team" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
+    ],
   },
   {
     title: "Services",
     links: [
-      "Product Development",
-      "AI Engineering",
-      "Full-Stack Engineering",
-      "Cloud & DevOps",
-      "Backend & APIs",
+      { label: "Product Development", href: "/services" },
+      { label: "AI Engineering", href: "/services" },
+      { label: "Full-Stack Engineering", href: "/services" },
+      { label: "Cloud & DevOps", href: "/services" },
+      { label: "Backend & APIs", href: "/services" },
     ],
   },
   {
     title: "Products",
-    links: ["Uraan", "Roadmap", "Pricing"],
+    links: [
+      { label: "Uraan", href: "/products" },
+      { label: "Roadmap", href: "/products#roadmap" },
+      { label: "Pricing", href: "/products#pricing" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Case Studies", "Insights", "FAQs", "Privacy Policy", "Terms of Service"],
+    links: [
+      { label: "Case Studies", href: "/work" },
+      { label: "Insights", href: "/blog" },
+      { label: "FAQs", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+    ],
   },
 ];
 
@@ -43,15 +59,21 @@ const socials = [
     label: "Email Ravaan Labs",
   },
 ];
+
 export default function Footer() {
   return (
     <footer className="bg-navy-900 pt-16">
       <div className="container-content grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
         <div>
-          <a href="#" className="flex items-center gap-2.5">
-            <Image src="/logo-mark-main.png" alt="" width={160} height={160} aria-hidden />
-          </a>
-             
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image
+              src="/logo-mark-main.png"
+              alt="Ravaan Labs"
+              width={140}
+              height={40}
+              className="h-8 w-auto"
+            />
+          </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
             We are a software &amp; AI product lab that turns ideas into
             intelligent products and powerful digital experiences.
@@ -63,11 +85,7 @@ export default function Footer() {
                 href={href}
                 aria-label={label}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={
-                  href.startsWith("mailto:")
-                    ? undefined
-                    : "noopener noreferrer"
-                }
+                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-white/60 transition hover:bg-white/10 hover:text-white"
               >
                 <Icon size={15} />
@@ -81,13 +99,13 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white">{col.title}</h4>
             <ul className="mt-4 flex flex-col gap-3">
               {col.links.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
                     className="text-sm text-white/50 transition hover:text-white"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

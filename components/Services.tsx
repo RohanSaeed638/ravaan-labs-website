@@ -1,6 +1,6 @@
-import { Box, Network, Code2, Cloud, Database, Rocket } from "lucide-react";
+import { Box, Network, Code2, Cloud, Database, MessagesSquare } from "lucide-react";
 
-const services = [
+export const services = [
   {
     icon: Box,
     title: "Product Development",
@@ -8,44 +8,53 @@ const services = [
   },
   {
     icon: Network,
-    title: "AI & LLM Engineering",
-    description: "Intelligent systems, RAG, agents and AI integrations.",
+    title: "AI Engineering",
+    description: "Custom AI models, LLM integration & intelligent systems.",
   },
   {
     icon: Code2,
     title: "Full-Stack Engineering",
-    description: "Web & mobile apps with robust, secure and clean code.",
+    description: "Modern, responsive web & mobile applications.",
   },
   {
     icon: Cloud,
     title: "Cloud & DevOps",
-    description: "Scalable infrastructure, CI/CD, automation and monitoring.",
+    description: "Scalable infrastructure, CI/CD, monitoring and automation.",
   },
   {
     icon: Database,
     title: "Backend & APIs",
-    description: "High-performance APIs, microservices and system architecture.",
+    description: "Secure, scalable and high-performance backend systems.",
   },
   {
-    icon: Rocket,
-    title: "Product Strategy",
-    description: "From idea validation to roadmap and go-to-market strategy.",
+    icon: MessagesSquare,
+    title: "Technical Consulting",
+    description: "Strategy and product advisory to de-risk your roadmap.",
   },
 ];
 
-export default function Services() {
+export default function Services({
+  id = "services",
+  eyebrow = "What we do",
+  title = "End-to-end. From idea to impact.",
+  subtitle = "We combine strategy, design, engineering and AI to build products that scale.",
+  bg = "bg-surface",
+}: {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  bg?: string;
+}) {
   return (
-    <section id="services" className="bg-surface py-24">
+    <section id={id} className={`${bg} py-24`}>
       <div className="container-content">
         <div className="mx-auto max-w-xl text-center">
-          <p className="text-[13px] font-semibold text-brand-blue">What we do</p>
+          <p className="text-[13px] font-semibold text-brand-blue">{eyebrow}</p>
           <h2 className="mt-3 text-3xl font-bold text-ink sm:text-[38px]">
-            End-to-end. From idea to impact.
+            {title}
           </h2>
-          <p className="mt-4 text-muted">
-            We combine strategy, design, engineering and AI to build products
-            that scale.
-          </p>
+          <p className="mt-4 text-muted">{subtitle}</p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

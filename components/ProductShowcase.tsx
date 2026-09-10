@@ -74,7 +74,7 @@ export default function ProductShowcase() {
             help learners achieve their goals faster.
           </p>
           <a
-            href="#"
+            href="/products"
             className="mt-7 inline-flex items-center gap-2 rounded-lg bg-brand-gradient-diag px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
           >
             Explore Uraan <span aria-hidden>→</span>

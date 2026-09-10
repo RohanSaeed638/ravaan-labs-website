@@ -21,7 +21,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
   const [isOpen, setIsOpen] = useState(false);
   const [subject, setSubject] = useState("Let's talk");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
 
   const open = useCallback((s?: string) => {
     setSubject(s || "Let's talk");
@@ -44,7 +44,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", company: "", message: "" });
     } catch {
       setStatus("error");
     }
@@ -119,6 +119,18 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-ink outline-none focus:border-brand-blue"
                     placeholder="you@company.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="mb-1 block text-sm font-medium text-ink">
+                    Company <span className="font-normal text-muted">(optional)</span>
+                  </label>
+                  <input
+                    id="company"
+                    value={form.company}
+                    onChange={(e) => setForm({ ...form, company: e.target.value })}
+                    className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm text-ink outline-none focus:border-brand-blue"
+                    placeholder="Your company"
                   />
                 </div>
                 <div>
