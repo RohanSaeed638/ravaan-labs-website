@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, ArrowRight, Clock3 } from "lucide-react";
 import { formatDate } from "@/lib/utils";
-import { blogs } from "@/lib/blogs";
+import { blogs } from "@/lib/blogs_2";
 import { blogCategories } from "@/lib/blogCategories";
 
 const categories = [

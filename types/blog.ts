@@ -10,34 +10,64 @@ export interface BlogAuthor {
   avatar?: string;
 }
 
+// export interface BlogSection {
+//   id: string;
+
+//   heading?: string;
+
+//   /**
+//    * Multiple paragraphs are better than one giant string.
+//    */
+//   paragraphs?: string[];
+
+//   bullets?: string[];
+
+//   quote?: {
+//     text: string;
+//     author?: string;
+//   };
+
+//   /**
+//    * Useful for architecture diagrams / flows for now.
+//    * Later we can replace these with proper visual components.
+//    */
+//   code?: string;
+
+//   image?: {
+//     src: string;
+//     alt: string;
+//     caption?: string;
+//   };
+// }
+
+export type BlogContentBlock =
+  | {
+      type: "paragraph";
+      content: string;
+    }
+  | {
+      type: "code";
+      content: string;
+      language?: string;
+    }
+  | {
+      type: "list";
+      items: string[];
+      ordered?: boolean;
+    }
+  | {
+      type: "diagram";
+      content: string;
+    }
+  | {
+      type: "quote";
+      content: string;
+    };
+
 export interface BlogSection {
   id: string;
-
   heading?: string;
-
-  /**
-   * Multiple paragraphs are better than one giant string.
-   */
-  paragraphs?: string[];
-
-  bullets?: string[];
-
-  quote?: {
-    text: string;
-    author?: string;
-  };
-
-  /**
-   * Useful for architecture diagrams / flows for now.
-   * Later we can replace these with proper visual components.
-   */
-  code?: string;
-
-  image?: {
-    src: string;
-    alt: string;
-    caption?: string;
-  };
+  blocks: BlogContentBlock[];
 }
 
 export interface Blog {
